@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Temp</title>
 </head>
 <body>
 
@@ -13,11 +13,13 @@
     <br />
    <asp:TextBox ID="txtLocation" runat="server"></asp:TextBox>
     <br />
-   <asp:Label ID="lblTemperature" runat="server" Text="Label"></asp:Label>
+   <asp:Label ID="lblTemperature" runat="server" Text="Temp"></asp:Label>
     <br />
    <asp:Button ID="btnGetTemperature" runat="server" Text="Get Temperature" OnClick="btnGetTemperature_Click" />
     <br />
-   <asp:Button ID="Button1" runat="server" Text="Oslo" OnClick="btnGetOslo_Click" />
+    <br />
+   <asp:Button ID="btnGetOslo" runat="server" Text="Oslo" OnClick="btnGetOslo_Click" />
+   <asp:Button ID="btnGetFredrikstad" runat="server" Text="Fredriksrad" OnClick="btnGetFredrikstad_Click" />
 </form>
 
 </body>

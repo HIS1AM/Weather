@@ -35,7 +35,7 @@ namespace Weather
             }
             catch (Exception)
             {
-                return $"Fail";
+                return $"Invalid input. Please enter valid coordinates numbers.";
             }
         }
 
@@ -43,12 +43,11 @@ namespace Weather
         {
             string location0 = "59.913995";
             string location1 = "10.748619";
-            string temperature = getTemperature(location0, location1);
+            string temperature = getTemperature_Oslo(location0, location1);
             lblTemperature.Text = $"{temperature} &deg;C";
-            // use the temperature value as required
         }
 
-        private string getTemperature(string location0, string location1)
+        private string getTemperature_Oslo(string location0, string location1)
         {
             var http = new HttpClient();
             http.DefaultRequestHeaders.Add("User-Agent", "Hisham");
@@ -58,6 +57,26 @@ namespace Weather
             string temperature = data.properties.timeseries[0].data.instant.details.air_temperature;
             return temperature;
         }
+
+        protected void btnGetFredrikstad_Click(object sender, EventArgs e)
+        {
+            string location0 = "59.2181";
+            string location1 = "10.9298";
+            string temperature = getTemperature_Fredrikstad(location0, location1);
+            lblTemperature.Text = $"{temperature} &deg;C";
+        }
+
+        private string getTemperature_Fredrikstad(string location0, string location1)
+        {
+            var http = new HttpClient();
+            http.DefaultRequestHeaders.Add("User-Agent", "Hisham");
+            var str = http.GetAsync($"https://api.met.no/weatherapi/nowcast/2.0/complete?lat={location0}&lon={location1}");
+            var result = str.Result.Content.ReadAsStringAsync().Result;
+            dynamic data = JObject.Parse(result.ToString());
+            string temperature = data.properties.timeseries[0].data.instant.details.air_temperature;
+            return temperature;
+        }
+
     }
 }
 

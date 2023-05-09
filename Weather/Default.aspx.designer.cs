@@ -51,12 +51,21 @@ namespace Weather
         protected global::System.Web.UI.WebControls.Button btnGetTemperature;
 
         /// <summary>
-        /// Button1 control.
+        /// btnGetOslo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnGetOslo;
+
+        /// <summary>
+        /// btnGetFredrikstad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGetFredrikstad;
     }
 }
