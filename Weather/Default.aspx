@@ -16,6 +16,8 @@
    <asp:Label ID="lblTemperature" runat="server" Text="Label"></asp:Label>
     <br />
    <asp:Button ID="btnGetTemperature" runat="server" Text="Get Temperature" OnClick="btnGetTemperature_Click" />
+    <br />
+   <asp:Button ID="Button1" runat="server" Text="Oslo" OnClick="btnGetOslo_Click" />
 </form>
 
 </body>
