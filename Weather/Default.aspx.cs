@@ -77,6 +77,25 @@ namespace Weather
             return temperature;
         }
 
+        protected void btnGetTromso_Click(object sender, EventArgs e)
+        {
+            string location0 = "69.6489";
+            string location1 = "18.95508";
+            string temperature = getTemperature_Tromso(location0, location1);
+            lblTemperature.Text = $"{temperature} &deg;C";
+        }
+
+        private string getTemperature_Tromso(string location0, string location1)
+        {
+            var http = new HttpClient();
+            http.DefaultRequestHeaders.Add("User-Agent", "Hisham");
+            var str = http.GetAsync($"https://api.met.no/weatherapi/nowcast/2.0/complete?lat={location0}&lon={location1}");
+            var result = str.Result.Content.ReadAsStringAsync().Result;
+            dynamic data = JObject.Parse(result.ToString());
+            string temperature = data.properties.timeseries[0].data.instant.details.air_temperature;
+            return temperature;
+        }
+
     }
 }
 

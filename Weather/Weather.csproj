@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Style.css" />
+    <Content Include="wallpaper.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
